@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "react-native";
+import { Button, Text } from "react-native";
 
 interface Props {
   title?: string;
