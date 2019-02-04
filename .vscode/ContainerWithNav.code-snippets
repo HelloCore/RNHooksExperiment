@@ -17,14 +17,15 @@
   // }
   "Create Container Component": {
     "scope": "typescriptreact",
-    "prefix": "createcontainer",
+    "prefix": "createContainerWithNav",
     "body": [
       "import React from \"react\";",
       "import { View } from \"react-native\";",
       "import { connect } from \"react-redux\";",
       "import { RootState } from \"src/typings/RootState\";",
+      "import { NavigationInjectedProps, withNavigation } from \"react-navigation\";",
       "",
-      "type Props = ReduxProps & DispatchProps;",
+      "type Props = ReduxProps & DispatchProps & Partial<NavigationInjectedProps>;",
       "",
       "const $0: React.FunctionComponent<Props> = props => {",
       "  return <View />;",
@@ -45,7 +46,7 @@
       "const ConnectedContainer = connect(",
       "  mapStateToProps,",
       "  mapDispatchToProps",
-      ")($0);",
+      ")(withNavigation($0));",
       "",
       "export default class extends React.Component {",
       "  render() {",
@@ -53,6 +54,6 @@
       "  }",
       "}"
     ],
-    "description": "Create Container"
+    "description": "Create Container with Navigation"
   }
 }
