@@ -2,7 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
     "experimentalDecorators": true,
     "jsx": "react",
     "keyofStringsOnly": true,
@@ -11,10 +10,29 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "build",
+    "plugins": [{ "name": "typescript-styled-plugin" }],
     "pretty": true,
     "strictNullChecks": false,
     "target": "es6",
-    "types": ["react", "react-native"],
-    "noEmit": true
-  }
+    "lib": ["es6"],
+    "types": ["jest", "react", "react-native"],
+    "noEmit": true,
+    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+    "paths": {
+      "src/*": ["src/*"],
+      "res/*": ["res/*"],
+      "storybook/*": ["storybook/*"]
+    }
+  },
+  "include": ["typings/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "dangerfile.ts",
+    "node_modules",
+    "Pod/Assets",
+    "Example/Build",
+    "externals",
+    "build",
+    "index.ios.js",
+    "**/__mocks__"
+  ]
 }

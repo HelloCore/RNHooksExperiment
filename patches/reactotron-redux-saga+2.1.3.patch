@@ -1,0 +1,11 @@
+patch-package
+--- a/node_modules/reactotron-redux-saga/reactotron-redux-saga.d.ts
++++ b/node_modules/reactotron-redux-saga/reactotron-redux-saga.d.ts
+@@ -14,6 +14,6 @@ declare module 'reactotron-redux-saga' {
+         except?: string[];
+     }
+ 
+-    export default function sagaPlugin(config: PluginConfig = {}): (tron: Reactotron) => ReactotronPlugin;
++    export default function sagaPlugin(config?: PluginConfig): (tron: Reactotron) => ReactotronPlugin;
+ }
+ 

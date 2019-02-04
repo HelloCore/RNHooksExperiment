@@ -3,28 +3,82 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "add-component": "hygen add component",
+    "add-feature": "hygen add feature",
+    "postinstall": "patch-package && prettier --write package.json ",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "storybook start -p 7007 -c .storybook --skip-packager | react-native start --projectRoot storybook",
+    "prestorybook": "rnstl"
   },
   "resolutions": {
     "scheduler": "0.12.0-alpha.3"
   },
   "dependencies": {
     "react": "16.7.0-alpha.2",
-    "react-native": "npm:@brunolemos/react-native"
+    "react-native": "npm:@brunolemos/react-native",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-navigation": "3.0.0",
+    "react-navigation-redux-helpers": "^2.0.9",
+    "react-navigation-stack": "^1.0.6",
+    "react-navigation-transitions": "^1.0.8",
+    "react-redux": "^6.0.0",
+    "reactotron-react-native": "^2.1.0",
+    "reactotron-redux": "^2.1.3",
+    "reactotron-redux-saga": "2.1.3",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^0.16.2",
+    "styled-components": "^3.4.10",
+    "typesafe-actions": "^3.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.11",
+    "@storybook/addon-links": "^3.3.11",
+    "@storybook/addons": "^3.3.11",
+    "@storybook/react-native": "^3.3.11",
+    "@types/jest": "^23.3.12",
+    "@types/qs": "^6.5.1",
     "@types/react": "^16.7.18",
-    "@types/react-native": "^0.57.27",
+    "@types/react-native": "0.57.28",
+    "@types/react-native-datepicker": "^1.7.0",
+    "@types/react-navigation": "^3.0.1",
+    "@types/react-redux": "^7.0.0",
+    "@types/storybook__react": "^3.0.9",
+    "@types/storybook__react-native": "^3.0.2",
+    "@types/webpack-env": "1.13.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-core": "^6.26.3",
     "babel-jest": "23.6.0",
+    "babel-runtime": "^6.26.0",
+    "hygen": "^2.1.1",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.51.1",
+    "patch-package": "^5.1.2",
+    "postinstall-postinstall": "^2.0.0",
+    "prettier": "^1.14",
+    "prop-types": "^15.6.2",
+    "react-dom": "16.7.0-alpha.2",
+    "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "^1.2.11",
     "react-test-renderer": "16.6.3",
-    "typescript": "^3.2.2"
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.0.3",
+    "typescript-styled-plugin": "^0.12.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "{**/*.story.js,**/*.story.tsx}",
+      "outputFile": "./storybook/storyLoader.js"
+    }
   },
   "prettier": {
     "printWidth": 120,

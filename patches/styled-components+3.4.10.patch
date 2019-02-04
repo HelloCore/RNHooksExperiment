@@ -1,0 +1,16 @@
+patch-package
+--- a/node_modules/styled-components/typings/styled-components.d.ts
++++ b/node_modules/styled-components/typings/styled-components.d.ts
+@@ -184,9 +184,11 @@ interface StylesheetComponentProps {
+   sheet: ServerStyleSheet
+ }
+ 
++export class StyleSheet {}
++
+ interface StyleSheetManagerProps {
+   sheet?: StyleSheet
+-  target?: Node
++  target?: React.ReactNode
+ }
+ 
+ export class StyleSheetManager extends React.Component<
